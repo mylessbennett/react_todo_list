@@ -31,7 +31,7 @@ function List () {
         </React.Fragment>  
         )
 
-    const caption = (listItems.length === 0) ? <div className="caption">Add a task to you To Do List!</div> : <div className="caption">You have <span className="caption-number">{listItems.length}</span> task(s) remaining.</div>
+    const caption = (listItems.length === 0) ? <div className="caption">Add a task to your To Do List!</div> : <div className="caption">You have <span className="caption-number">{listItems.length}</span> task(s) remaining.</div>
 
     return (
         <React.Fragment>
