@@ -69,12 +69,18 @@ li:hover {
   padding: 1rem;
   margin: 0 auto;
   width: 80%;
-  height: 75vh;
+  height: 100vh;
 }
 
 .caption-number {
   font-weight: bold;
   color: yellow;
+  text-decoration: underline;
+}
+
+.due-date-number {
+  font-weight: bold;
+  color: #e72b2b;
   text-decoration: underline;
 }
 

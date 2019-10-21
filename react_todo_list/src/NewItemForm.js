@@ -19,7 +19,7 @@ const NewItemForm = ({ addItem }) => {
         <form onSubmit={handleSubmit}>
             <input type="text" required value={title} placeholder="Title" onChange={(e) => setTitle(e.target.value)}/>
             <input type="text" required value={description} placeholder="Description" onChange={(e)=> setDescription(e.target.value)}/>    
-            <input type="text" required value= {dueDate} placeholder="Due Date (MM/DD/YY)" onChange={(e)=> setDueDate(e.target.value)}/>
+            <input type="text" required value= {dueDate} placeholder="Due Date (MM/DD/YYYY)" onChange={(e)=> setDueDate(e.target.value)}/>
             <input type="submit" value="Add List Item"/>
         </form>
     );

@@ -23,14 +23,29 @@ function List () {
         setlistItems(listItems.filter((item) => item.title !== e.target.getAttribute('id')))
     }
 
+    const currentDate = new Date() 
+
+    const dueDateDiff = (currentDate, dueDate) => {
+        let dt1 = new Date(currentDate);
+        let dt2 = new Date(dueDate);
+        const remainingDays = Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) ) /(1000 * 60 * 60 * 24));
+        if (remainingDays === 0) {
+            return "Today!"
+        } else if (remainingDays < 0) {
+            return (remainingDays*-1) + " " + "day(s) ago"
+        } else {
+            return "in" + " " + remainingDays + " " + "day(s)"
+        }   
+    }
+
     const itemElements = listItems.map((item, i) => 
         <React.Fragment>
                 <li key={i} id={item.title} onClick={checkOffItem}>
-                    <span className="item-title">{item.title}</span><br/><i>{item.description}</i> | {item.dueDate}
+                    <span className="item-title">{item.title}</span><br/><i>{item.description}</i><br />Date: {item.dueDate}| Due: <span className="due-date-number">{dueDateDiff(currentDate,item.dueDate)}</span>.
                 </li>
         </React.Fragment>  
         )
-
+    
     const caption = (listItems.length === 0) ? <div className="caption">Add a task to your To Do List!</div> : <div className="caption">You have <span className="caption-number">{listItems.length}</span> task(s) remaining.</div>
 
     return (
