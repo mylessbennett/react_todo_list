@@ -25,11 +25,13 @@ function List () {
 
     const itemElements = listItems.map((item, i) => 
         <React.Fragment>
-                <li key={i} id={item.title} onClick={checkOffItem}>{item.title} | {item.description} | {item.dueDate}</li>
+                <li key={i} id={item.title} onClick={checkOffItem}>
+                    <span className="item-title">{item.title}</span><br/><i>{item.description}</i> | {item.dueDate}
+                </li>
         </React.Fragment>  
         )
 
-    const caption = (listItems.length === 0) ? <p>Add a task to you To Do List!</p> : <p>You have <span className="caption-number">{listItems.length}</span> task(s) remaining.</p>
+    const caption = (listItems.length === 0) ? <div className="caption">Add a task to you To Do List!</div> : <div className="caption">You have <span className="caption-number">{listItems.length}</span> task(s) remaining.</div>
 
     return (
         <React.Fragment>
