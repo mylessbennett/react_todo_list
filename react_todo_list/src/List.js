@@ -16,17 +16,24 @@ function List () {
     }, [listItems])
 
     const addItem = (title, description, dueDate) => {
-        setlistItems([...listItems, {title: title, description: description, dueDate: dueDate}])
+        setlistItems([...listItems, {title: title, description: description, dueDate: dueDate, completed: false}])
+    }
+    
+    const checkOffItem = (e) => {
+        setlistItems(listItems.filter((item) => item.title !== e.target.getAttribute('id')))
     }
 
     const itemElements = listItems.map((item, i) => 
         <React.Fragment>
-            <li key={i} id={item.title}>{item.title} | {item.description} | {item.dueDate} <button>Delete</button></li>
-        </React.Fragment> 
+                <li key={i} id={item.title} onClick={checkOffItem}>{item.title} | {item.description} | {item.dueDate}</li>
+        </React.Fragment>  
         )
+
+    const caption = (listItems.length === 0) ? <p>Add a task to you To Do List!</p> : <p>You have <span className="caption-number">{listItems.length}</span> task(s) remaining.</p>
 
     return (
         <React.Fragment>
+            { caption }
             <ul>
                 { itemElements }
             </ul>

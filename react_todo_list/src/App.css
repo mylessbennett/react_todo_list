@@ -1,22 +1,78 @@
-.App {
-  text-align: center;
+body , * {
+  box-sizing: content-box;
+  font-family: Roboto, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-color: #034078;
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 0.5rem auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+input[type=submit] {
+  width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 0.5rem auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  font-size: 1.3rem;
+}
+
+ul {
+  list-style: none;
+  margin: 1em auto;
+  padding: 0.5em;
+}
+
+li {
+  padding: 0.5rem;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+li:hover {
+  cursor: pointer;
+  background-color: #034078;
+  text-decoration: line-through;
+}
+
+p {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.content-wrapper {
+  background-color: #054F91;
+  padding: 1rem;
+  margin: 0 auto;
+  width: 80%;
+  height: 75vh;
+}
+
+.caption-number {
+  font-weight: bold;
+  color: yellow;
+  text-decoration: underline;
 }
